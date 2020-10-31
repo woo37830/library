@@ -1,9 +1,9 @@
 <?php
+require 'config.ini.php';
 
-$conn = @mysql_connect('127.0.0.1','root','random1');
+$conn = new mysqli($config['DATABASE_SERVER'],$config['DATABASE_USER'],$config['DATABASE_PASSWORD'],$config['LIBRARY_DATABASE']);
 if (!$conn) {
 	die('Could not connect: ' . mysql_error());
 }
-mysql_select_db('library', $conn);
 
 ?>
